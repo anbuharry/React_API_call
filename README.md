@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Creating a API using FastAPI with REDIS Database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+FILE DETAILS :
 
-In the project directory, you can run:
+**HASH.PY**       : `Create hashes using hset and add them into redis db`
 
-### `npm start`
+**CONNECTION.PY** : `Made a connection with Redis db using redis_cache`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**MAIN.PY**       : `Access db with GET,SET,and POST methods`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+--------------------------------------------------------------------------------------
 
-### `npm test`
+**NOTES**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+RUN FASTAPI : `uvicorn main:app --reload`
 
-### `npm run build`
+--------------------------------------------------------------------------------------
+**COMMANDS :** 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+START REDIS SERVER : `redis-server`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+START REDIS SERVER : `redis-server --port 6360`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+START REDIS SERVER : `/etc/init.d/redis-server stop`
 
-### `npm run eject`
+START REDIS SERVER : `/etc/init.d/redis-server start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+STOP REDIS SERVER  : `sudo service redis-server stop`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+START REDIS CLIENT : `redis-cli`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+GET REDIS KEYS     : `key *`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+GET REDIS KEYS     : `redis-cli keys`
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
