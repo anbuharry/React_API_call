@@ -3,23 +3,10 @@ from uvicorn import run
 from fastapi import FastAPI, Request, Response
 from connection import redis_cache
 from hash import r
-from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(title="FastAPI with Redis")
 
-origins = [
-    "http://localhost:3000",
-
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 async def get_all():
     return await redis_cache.keys('*')
@@ -111,6 +98,19 @@ def sortdays():
         for days in pipe.execute():
                 last15days.append(days)
         return last15days
+    
+   
+#To get all the values between two diff dates
+@app.get("/betweendays")
+def betweendays():
+        bdays = r.sort("date", 25, 30, alpha=True) #25 to 30 (dates)
+        pipe = r.pipeline()
+        for keys in bdays:
+                pipe.hgetall(keys)
+        betwdays = []
+        for days in pipe.execute():
+                betwdays.append(days)
+        return betwdays
 
 
 
